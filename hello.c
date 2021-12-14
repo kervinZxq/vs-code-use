@@ -1,6 +1,8 @@
 #include <stdio.h>
+extern int funa(int i);
 int main()
 {
-    printf("hello");
+    int j = funa(1);
+    printf("hello %d\n",j);
     return 0;
 }

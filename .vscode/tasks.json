@@ -1,0 +1,105 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        // {
+        //     "type": "cppbuild",
+        //     "label": "C/C++: gcc build active file",
+        //     "command": "/usr/bin/gcc",
+        //     "args": [
+        //         "-fdiagnostics-color=always",
+        //         "-g",
+        //         "${file}",
+        //         "-o",
+        //         "${fileDirname}/${fileBasenameNoExtension}"
+        //     ],
+        //     "options": {
+        //         "cwd": "${fileDirname}"
+        //     },
+        //     "problemMatcher": [
+        //         "$gcc"
+        //     ],
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     },
+        //     "detail": "compiler: /usr/bin/gcc"
+        // },
+        {
+            "label": "debug",
+            "dependsOn": [
+                "build",
+                "run"
+            ]
+        },
+        {
+            "label": "build",
+            "type": "process",
+            "command": "sh",
+            "args": [
+                "${workspaceFolder}/build.sh"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/gcc"
+        },
+        {
+            "label": "run",
+            "type": "process",
+            "command": "${workspaceFolder}/a.out",
+            "args": [
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/gcc"
+        },
+        {
+            "label": "Create terminals",
+            "dependsOn": [
+                "First",
+                "Second"
+            ],
+            // Mark as the default build task so cmd/ctrl+shift+b will create them
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            // Try start the task on folder open
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
+            // The name that shows up in terminal tab
+            "label": "First",
+            // The task will launch a shell
+            "type": "process",
+            "command": "",
+            // Set the shell type
+            // "options": {
+            //     "shell": {
+            //         "executable":"",
+            //         "args": []
+            //     }
+            // },
+            // Mark as a background task to avoid the spinner animation on the terminal tab
+            "isBackground": true,
+            "problemMatcher": [],
+            // Create the tasks in a terminal group
+            "presentation": {
+                "group": "my-group"
+            }
+        },
+    ]
+}

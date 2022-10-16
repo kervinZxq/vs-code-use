@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/foo.h
+
+/home/zxq/proj/vscode-hello/src/foo.c
+stdio.h
+-
+foo.h
+/home/zxq/proj/vscode-hello/src/foo.h
+

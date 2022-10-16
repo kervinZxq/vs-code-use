@@ -1,0 +1,5 @@
+/home/zxq/proj/vscode-hello/build/CMakeFiles/rebuild_cache.dir
+/home/zxq/proj/vscode-hello/build/CMakeFiles/edit_cache.dir
+/home/zxq/proj/vscode-hello/build/CMakeFiles/hello.dir
+/home/zxq/proj/vscode-hello/build/CMakeFiles/test.dir
+/home/zxq/proj/vscode-hello/build/CMakeFiles/hello_test.dir
